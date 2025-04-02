@@ -1,16 +1,13 @@
-import type { ReactNode } from "react";
+import type { ReactNode, ComponentProps } from "react";
 
-interface ButtonProps {
-	children: ReactNode;
-}
+interface ButtonProps extends ComponentProps<'button'> {}
 
 export function Button(props: ButtonProps) {
 	return (
 		<button
 			className="flex justify-between items-center px-5 h-12 bg-gray-500 text-blue font-semibold rounded-xl w-full cursor-pointer transition-colors duration-300 hover:bg-blue hover:text-gray-900"
 			type="button"
-		>
-			{props.children}
-		</button>
+			{...props}
+		/>
 	);
 }
