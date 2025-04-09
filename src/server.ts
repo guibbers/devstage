@@ -1,40 +1,36 @@
 import { fastifyCors } from '@fastify/cors';
+import fastifySwagger from '@fastify/swagger';
+import fastifySwaggerUi from '@fastify/swagger-ui';
 import { fastify } from 'fastify';
 import {
   type ZodTypeProvider,
+  jsonSchemaTransform,
   serializerCompiler,
   validatorCompiler,
 } from 'fastify-type-provider-zod';
 import { z } from 'zod';
-
-const port = 3333;
+import { env } from './env';
+import { subscribeToEventRoute } from './routes/subscribe-to-event-route';
 
 const app = fastify().withTypeProvider<ZodTypeProvider>();
-app.register(fastifyCors);
-
 app.setValidatorCompiler(validatorCompiler);
 app.setSerializerCompiler(serializerCompiler);
-
-app.post(
-  '/subscriptions',
-  {
-    schema: {
-      body: z.object({
-        name: z.string(),
-        email: z.string().email(),
-      }),
+app.register(fastifyCors);
+app.register(fastifySwagger, {
+  openapi: {
+    info: {
+      title: 'Devstage',
+      version: '0.0.1',
     },
   },
-  (req, res) => {
-    const { email, name } = req.body;
+  transform: jsonSchemaTransform,
+});
+app.register(fastifySwaggerUi, {
+  routePrefix: '/docs',
+});
 
-    return res.status(201).send({
-      name,
-      email,
-    });
-  }
-);
+app.register(subscribeToEventRoute);
 
-app.listen({ port }).then(() => {
-  console.log(`Server running on port ${port}`);
+app.listen({ port: env.PORT }).then(() => {
+  console.log(`Server running on port ${env.PORT}`);
 });
