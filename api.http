@@ -2,13 +2,22 @@ POST http://localhost:3333/subscriptions
 Content-Type: application/json
 
 {
-  "name": "Guilherme Torres",
-  "email": "guilherme@email.com"
+  "name": "Teresa Maria",
+  "email": "teresa@email.com",
+  "referrer": "7d98dd77-643e-4033-b336-80f6140d9007"
 }
 ###
 
-GET http://localhost:3333/invites/b90d18ac-7deb-4615-a654-14df071cd6a3
+GET http://localhost:3333/invites/7d98dd77-643e-4033-b336-80f6140d9007
 
 ###
 
-GET http://localhost:3333/subscribers/b90d18ac-7deb-4615-a654-14df071cd6a3/ranking/clicks
+GET http://localhost:3333/subscribers/7d98dd77-643e-4033-b336-80f6140d9007/ranking/clicks
+
+###
+
+GET http://localhost:3333/subscribers/7d98dd77-643e-4033-b336-80f6140d9007/ranking/count
+
+###
+
+GET http://localhost:3333/subscribers/7d98dd77-643e-4033-b336-80f6140d9007/ranking/position
