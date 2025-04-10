@@ -11,6 +11,7 @@ import {
 import { z } from 'zod';
 import { env } from './env';
 import { accessInviteLinkRoute } from './routes/access-invite-link-route';
+import { getRankingRoute } from './routes/get-ranking-route';
 import { getSubscriberInviteClicksRoute } from './routes/get-subscriber-invite-clicks-route';
 import { getSubscriberInvitesCountRoute } from './routes/get-subscriber-invites-count-route';
 import { getSubscriberRankingPositionRoute } from './routes/get-subscriber-ranking-position-route';
@@ -38,6 +39,7 @@ app.register(accessInviteLinkRoute);
 app.register(getSubscriberInviteClicksRoute);
 app.register(getSubscriberInvitesCountRoute);
 app.register(getSubscriberRankingPositionRoute);
+app.register(getRankingRoute);
 
 app.listen({ port: env.PORT }).then(() => {
   console.log(`Server running on port ${env.PORT}`);
