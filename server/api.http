@@ -1,0 +1,27 @@
+POST http://localhost:3333/subscriptions
+Content-Type: application/json
+
+{
+  "name": "Teresa Maria",
+  "email": "teresa@emadfsdfsil.com",
+  "referrer": "aee815a2-2c08-4562-a2bf-6b1ae32e9a39"
+}
+###
+
+GET http://localhost:3333/invites/7d98dd77-643e-4033-b336-80f6140d9007
+
+###
+
+GET http://localhost:3333/subscribers/7d98dd77-643e-4033-b336-80f6140d9007/ranking/clicks
+
+###
+
+GET http://localhost:3333/subscribers/7d98dd77-643e-4033-b336-80f6140d9007/ranking/count
+
+###
+
+GET http://localhost:3333/subscribers/7d98dd77-643e-4033-b336-80f6140d9007/ranking/position
+
+###
+
+GET http://localhost:3333/ranking
