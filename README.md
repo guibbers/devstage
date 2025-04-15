@@ -16,6 +16,9 @@ Essas porcentagens refletem a distribuição do código no repositório.​
 - server/ – Contém a lógica de backend da aplicação.
 - web/ – Inclui a interface frontend desenvolvida para interação com o usuário.
 
+## Documentação
+- [Server / Back-end](https://github.com/guibbers/devstage/blob/main/SERVER.md)
+
 
 ## 🛠️ Como Contribuir
 Fork este repositório.
