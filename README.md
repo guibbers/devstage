@@ -18,6 +18,7 @@ Essas porcentagens refletem a distribuição do código no repositório.​
 
 ## Documentação
 - [Server / Back-end](https://github.com/guibbers/devstage/blob/main/SERVER.md)
+- [Web / Front-end](https://github.com/guibbers/devstage/blob/main/WEB.md)
 
 
 ## 🛠️ Como Contribuir
